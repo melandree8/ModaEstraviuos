@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+.navbar .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fbfcfc;
+    letter-spacing: 5px;
+    padding-left: 60px;
+}
+
+
+.navbar .icons {
+    display: flex;
+    gap: 15px;
+    padding-right: 70px;
+}
+
+.navbar .icons a {
+    text-decoration: none;
+    color: #fbfcfc;
+    font-size: 20px;
+    transition: color 0.3s ease; /* Transición suave en hover */
+}
+
+.navbar .menu{
+    text-decoration: none;
+    color: #fbfcfc;
+    font-size: 20px;
+    padding-left: 30px;
+
+}
+
+/* Sección principal */
+.main-banner {
+    position: relative;
+    background-image: url(https://static.e-stradivarius.net/assets/public/4cb8/9d73/168042b4be6f/26a4aac02c75/2400Lanzamiento/2400Lanzamiento.jpg?ts=1734429883985&w=1894.5&f=auto);
+    background-position: center; /* Asegura que la imagen esté centrada */
+    background-size: cover; /* Asegura que la imagen ocupe todo el espacio */
+    text-align: center;
+    height: 90vh; /* Cambiado a unidades relativas para mayor adaptabilidad */
+}
+
+.main-banner .content {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    text-align: center;
+}
+
+.main-banner .content h1 {
+    font-size: 63px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.main-banner .content h2{
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.main-banner .content p {
+    font-size: 13px;
+    margin: 10px 20px 20px 0;
+    text-transform: uppercase;
+}
+
+.main-banner .content a {
+    text-decoration: none;
+    color: #fbfcfc;
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+}
+
+.navbar:hover{
+    background-color: #fbfcfc;
+}
+
+
+.navbar:hover .logo {
+    color: #333; /* Cambiar el color de los íconos y el logo al pasar el mouse */
+}
+
+.navbar:hover .icons a, .navbar:hover .menu{
+    color: #b2b5b5;
+}
+
+.coleccion{
+    background-color:red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+
+.coleccion .cole{
+    width: 40px;
+    height: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 5px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.7s ease;
+}  
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}  
+
+/* Codigo Para sobreponer el texto en la imagen */
+.gallery-item .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: opacity 0.3s ease;
+
+}
+
+.gallery-item .overlay h3 {
+    font-size: 24px;
+    margin: 10px 0 0;
+}
+
+/* Menú fijo */
+.navbar {
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté encima del contenido */
+    background-color: transparent; /* Fondo transparente por defecto */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+ /* Menú al hacer scroll */
+.navbar.scrolled {
+    background-color: #fff; /* Cambia a un fondo blanco */
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /*Agrega sombra */
+} 
+
+.navbar.scrolled .logo {
+    color: #333; /* Cambia el color del logo */
+} */
+
+.navbar.scrolled .icons a, 
+.navbar.scrolled .menu {
+    color: #666; /*Cambia el color de los íconos */
+} 
+
+/* Carousel General*/
+.carousel {
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Carrusel */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 90%; /* Ajusta el ancho del carrusel */
+}
+
+.carousel-item {
+    min-width: 32%; /* Tamaño de cada elemento */
+    margin: 0 2px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img {
+    width: 80%;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+/* .carousel-item img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse 
+}*/
+
+.product-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 12px;
+    color: #666;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 5px;
+}
+
+.current-price {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Botones */
+.carousel-btn {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.carousel-btn.prev {
+    position: absolute;
+    left: 10px;
+}
+
+.carousel-btn.next {
+    position: absolute;
+    right: 10px;
+}
+
+.footer-superior{
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 50px;
+}
+
+
+.footer-item{
+    flex: 1; /* Cada columna ocupa el mismo espacio */
+    text-align: center;
+    padding: 0  15px;
+}
+
+.footer-item i{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-item h2{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-item h3, 
+.footer-item p{
+    font-size: 1.0rem;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.tarjetas i{
+    font-size: 2rem;
+    margin: 0 5px;
+}
